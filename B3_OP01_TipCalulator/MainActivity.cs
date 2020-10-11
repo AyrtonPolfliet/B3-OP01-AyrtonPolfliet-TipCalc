@@ -9,20 +9,30 @@ using Android.Widget;
 
 namespace B3_OP01_TipCalulator
 {
-    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme.NoActionBar", MainLauncher = true)]
+    [Activity(Label = "Tipcalculator", Theme = "@style/AppTheme.NoActionBar", MainLauncher = true)]
     public class MainActivity : AppCompatActivity
     {
-        protected override void OnCreate(Bundle savedInstanceState)
+        EditText inputRekening;
+        Button berekenButton;
+        TextView outputTip;
+        TextView outputTotaal;
+
+        protected override void OnCreate(Bundle bundle)
         {
-            base.OnCreate(savedInstanceState);
-            Xamarin.Essentials.Platform.Init(this, savedInstanceState);
+            base.OnCreate(bundle);
+            Xamarin.Essentials.Platform.Init(this, bundle);
             SetContentView(Resource.Layout.activity_main);
 
             Android.Support.V7.Widget.Toolbar toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
             SetSupportActionBar(toolbar);
 
-            FloatingActionButton fab = FindViewById<FloatingActionButton>(Resource.Id.fab);
-            fab.Click += FabOnClick;
+            inputRekening = FindViewById<EditText>(Resource.Id.inputRekening);
+            outputTip = FindViewById<TextView>(Resource.Id.outputTip);
+            outputTotaal = FindViewById<TextView>(Resource.Id.outputTotaal);
+            berekenButton = FindViewById<Button>(Resource.Id.berekenButton);
+
+            berekenButton = FindViewById<Button>(Resource.Id.berekenButton);
+            berekenButton.Click += OnBerekenClick;
         }
 
         public override bool OnCreateOptionsMenu(IMenu menu)
@@ -55,5 +65,19 @@ namespace B3_OP01_TipCalulator
 
             base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
         }
-	}
+
+        void OnBerekenClick(object sender, EventArgs e)
+        {
+            string text = inputRekening.Text;
+            double rekening = 0;
+            if (double.TryParse(text, out rekening))
+            {
+                var tip = rekening * 0.15;
+                var totaal = rekening + tip;
+
+                outputTip.Text = tip.ToString();
+                outputTotaal.Text = totaal.ToString();
+            }
+        }
+    }
 }
