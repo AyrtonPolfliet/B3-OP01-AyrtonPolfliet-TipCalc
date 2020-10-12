@@ -13,6 +13,7 @@ namespace B3_OP01_TipCalulator
     public class MainActivity : AppCompatActivity
     {
         EditText inputRekening;
+        EditText inputTipPercentage;
         Button berekenButton;
         TextView outputTip;
         TextView outputTotaal;
@@ -27,10 +28,9 @@ namespace B3_OP01_TipCalulator
             SetSupportActionBar(toolbar);
 
             inputRekening = FindViewById<EditText>(Resource.Id.inputRekening);
+            inputTipPercentage = FindViewById<EditText>(Resource.Id.inputTipPercentage);
             outputTip = FindViewById<TextView>(Resource.Id.outputTip);
             outputTotaal = FindViewById<TextView>(Resource.Id.outputTotaal);
-            berekenButton = FindViewById<Button>(Resource.Id.berekenButton);
-
             berekenButton = FindViewById<Button>(Resource.Id.berekenButton);
             berekenButton.Click += OnBerekenClick;
         }

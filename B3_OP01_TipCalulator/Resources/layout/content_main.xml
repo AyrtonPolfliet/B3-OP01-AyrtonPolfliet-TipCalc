@@ -7,49 +7,176 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:showIn="@layout/activity_main"
-    android:orientation="vertical>
+    android:orientation="vertical">
+    
 
-
-     <EditText
+    <TextView
+        android:text ="Voer bedrag van de rekening in:"
+        android:layout_width ="wrap_content"
+        android:layout_height="70px"
+        android:id="@+id/textView1"/>
+    <EditText
         android:layout_width ="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/inputRekening" />
-
+        android:id="@+id/inputRekening"/>
+    <TextView
+        android:text ="Selecteer percentage van de tip:"
+        android:layout_width ="wrap_content"
+        android:layout_height="70px"
+        android:id="@+id/textView2"/>
+    <!-- Hier komt de slider-->
+    <EditText
+        android:layout_width ="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/inputRekening"/>
     <Button
         android:layout_width ="match_parent"
-        android:layout_height="20"
-        android:text ="Bereken" 
+        android:layout_height="wrap_content"
+        android:text ="Bereken de tip"
         android:id="@+id/berekenButton"/>
+    
+
 
     <LinearLayout
         android:layout_width ="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:minHeight="70px"
+        android:minWidth="100px">
+
+        <LinearLayout
+        android:layout_width ="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:minHeight="70px">
         <TextView
-            android:text ="Tip"
+            android:text ="Tip: "
             android:layout_width ="wrap_content"
-            android:layout_height="wrap_content" 
-            android:id="@+id/outputTip"/>
+            android:layout_height="wrap_content"/>
         <TextView
-            android:text ="Totaal"
-            android:layout_width ="match_parent"
+            android:layout_width ="wrap_content"
             android:layout_height="wrap_content"
+            android:id="@+id/outputTip"/>
+            </LinearLayout>
+
+        <LinearLayout
+        android:layout_width ="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:minHeight="70px">
+        <TextView
+            android:text ="Totaal: "
+            android:layout_width ="wrap_content"
+            android:layout_height="match_parent" />
+        <TextView
+            android:layout_width ="wrap_content"
+            android:layout_height="match_parent" 
+            android:id="@+id/outputTotaal"/>
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <!-->
+    <LinearLayout
+        android:layout_width ="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:minHeight="40px"
+        android:minWidth="40px"
+    <TextView
+            android:text ="Tip: "
+            android:layout_width ="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/outputTip"/>
+    <TextView
+            android:text ="Totaal: "
+            android:layout_width ="wrap_content"
+            android:layout_height="match_parent" 
             android:id="@+id/outputTotaal"/>
     </LinearLayout>
-
     <LinearLayout
         android:layout_width ="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <TextView
-            android:text ="Totaal"
-            android:layout_width ="wrap_content"
-            android:layout_height="match_parent" />
+        android:orientation="vertical">
+        
         <TextView
             android:layout_width ="wrap_content"
             android:layout_height="match_parent" />
     </LinearLayout>
+    -->
+    <!--
+    <GridLayout
+      android: layout_width= "match_parent”
+      android: layout_height= “match_parent”
+      android:column= “1”
+      android:row= “1”  
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="20dp"
+            android:layout_column= "0”
+            android:layout_row= “0”
+            android:text="Tip" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_column= "0”
+            android:layout_row= “1”
+            android:id="@+id/outputTip" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="20dp"
+            android:layout_column= "1”
+            android:layout_row= “0”
+            android:text="Totaal" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_column= "1”
+            android:layout_row= “1”
+            android:id="@+id/outputTotaal" />
+    </GridLayout>
+    -->
+    <!--
+    <LinearLayout
+      android: layout_width= "match_parent”
+      android: layout_height= “match_parent”
+     android:orientation="vertical"
 
-   
+        <LinearLayout
+        android: layout_width= "match_parent”
+        android: layout_height= “match_parent”
+        android:orientation="vertical"
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginRight="20dp"
+                android:layout_column= "0”
+                android:layout_row= “0”
+                android:text="Tip" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_column= "0”
+                android:layout_row= “1”
+                android:id="@+id/outputTip" />
+        />
+     </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="20dp"
+            android:layout_column= "1”
+            android:layout_row= “0”
+            android:text="Totaal" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_column= "1”
+            android:layout_row= “1”
+            android:id="@+id/outputTotaal" />
+    </LinearLayout>
+    -->
 
 </LinearLayout>
